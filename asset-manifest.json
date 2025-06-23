@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Champan/static/css/main.e6c13ad2.css",
+    "main.js": "/Champan/static/js/main.820c3cb7.js",
+    "static/js/453.44f72e2b.chunk.js": "/Champan/static/js/453.44f72e2b.chunk.js",
+    "index.html": "/Champan/index.html",
+    "main.e6c13ad2.css.map": "/Champan/static/css/main.e6c13ad2.css.map",
+    "main.820c3cb7.js.map": "/Champan/static/js/main.820c3cb7.js.map",
+    "453.44f72e2b.chunk.js.map": "/Champan/static/js/453.44f72e2b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.820c3cb7.js"
+  ]
+}
