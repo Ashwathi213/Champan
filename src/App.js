@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { Box } from '@mui/material';
+import Sidebar from './components/Sidebar';
+import Header from './components/Header';
+import InvoiceGrid from './components/ImageViewer';
+import Footer from './components/Footer';
 
 function App() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  const handleSidebarToggle = () => {
+    setIsSidebarOpen((prev) => !prev);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+      <Header onToggleSidebar={handleSidebarToggle} />
+      <Box sx={{ display: 'flex', flex: 1 }}>
+        {isSidebarOpen && <Sidebar />}
+        <Box
+          component="main"
+          sx={{
+            flexGrow: 1,
+            p: 3,
+            bgcolor: '#f5f7fb',
+            transition: 'margin 0.3s',
+            width: isSidebarOpen ? 'calc(100% - 220px)' : '100%',
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <InvoiceGrid />
+        </Box>
+      </Box>
+      <Footer />
+    </Box>
   );
 }
 
